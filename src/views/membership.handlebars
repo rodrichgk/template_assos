@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/membership.css"> <!-- Link to your compiled SCSS file -->
+
+<div class="membership-container">
+    <div class="menu-box">
+        <h2>Menu</h2>
+        <button class="menu-button" data-content-id="membership">Membership</button>
+        <button class="menu-button" data-content-id="account">Personal Account</button>
+        <button class="menu-button" data-content-id="projects">Projects</button>
+        <button class="menu-button" data-content-id="favorite-projects">Favorite Projects</button>
+    </div>
+
+    <div class="content-box" id="dynamic-content" >
+        {{#switch contentIdentifier }}
+            {{#case "membership"}}
+                {{> membershipContent}}
+            {{/case}}
+            {{#case "account"}}
+                {{> accountContent}}
+            {{/case}}
+            {{#case "projects"}}
+                {{> projectsContent}}
+            {{/case}}
+            {{#case "favorite"}}
+                {{> favoriteprojectsContent}}
+            {{/case}}
+            {{else}}
+                <p>Content not found</p>
+        {{/switch}}
+    </div>
+</div>
+
+    <script src="/js/membership.js" type="text/javascript"></script>

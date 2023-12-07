@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+.centered-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 55vh; }
+  .centered-text h1 {
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Poppins';
+    margin-bottom: 20px; }
+  .centered-text p {
+    text-align: center;
+    font-family: 'Poppins'; }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5vw;
+  width: 100%; }
+  .container .box {
+    background-color: #fff;
+    border: 1px solid #fff;
+    align-items: center;
+    transition: ease-in-out 0.3s;
+    border-radius: 2vw;
+    padding: 20px;
+    height: 16vw; }
+    .container .box:hover {
+      transform: scale(1.2);
+      box-shadow: 0px 8px 15px rgba(82, 110, 199, 0.4); }
+    .container .box h2 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      font-family: 'Poppins'; }
+    .container .box p {
+      font-size: 1em;
+      line-height: 1.4;
+      font-family: 'Poppins'; }
+
+.arrow-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 45px;
+  color: #000;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0px 15px 15px rgba(82, 110, 199, 0.4); }
+  .arrow-button:hover {
+    background-color: #526ec7;
+    color: #fff; }
+    .arrow-button:hover .arrow {
+      transform: rotate(-45deg) translate(4px, 4px);
+      border-color: #fff; }
+      .arrow-button:hover .arrow::before {
+        opacity: 1;
+        width: 8px; }
+  .arrow-button .arrow {
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #526ec7;
+    border-bottom: 2px solid #526ec7;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 0 6px;
+    transition: all 0.3s ease; }
+    .arrow-button .arrow::before {
+      display: block;
+      background-color: #fff;
+      width: 3px;
+      transform-origin: bottom right;
+      height: 2px;
+      position: absolute;
+      opacity: 0;
+      bottom: calc(-2px / 2);
+      transform: rotate(45deg);
+      transition: all 0.3s ease;
+      content: "";
+      right: 0; }
+
+.section_2 {
+  margin-top: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+  .section_2 .for_who_description {
+    grid-column: 1/2;
+    border-radius: 16px;
+    width: 70%;
+    height: 400px;
+    padding: 20px; }
+    .section_2 .for_who_description h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 3em;
+      font-family: 'Poppins'; }
+  .section_2 .for_who_pic {
+    grid-column: 2/2;
+    background-image: url("/images/fablab.jpeg");
+    background-size: cover;
+    border-radius: 5%;
+    transition: ease-in-out 0.2s; }
+    .section_2 .for_who_pic:hover {
+      box-shadow: 0px 30px 30px rgba(82, 110, 199, 0.4); }
