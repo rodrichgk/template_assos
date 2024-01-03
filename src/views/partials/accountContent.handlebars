@@ -1,5 +1,49 @@
-<!-- Sample content for the Personal Account link -->
-<div id="account">
-    <h2>Personal Account Details</h2>
-    <p>This is the personal account content.</p>
-</div>
+<form class="pa-container" method="post">
+    <div class="content-section ">
+        <section>
+            <h2>Full Name</h2>
+            <div>
+                <input class="name_field" type="text" id="firstName" name="firstName" placeholder="first name" value="{{ data.firstName }}">
+                <input class="name_field" type="text" id="lastName" name="lastName" placeholder="last name" value="{{ data.lastName }}">
+            </div>
+        </section>
+
+        <section>
+            <h2>Date of Birth</h2>
+            <div>
+                <input class="date_field" type="text" id="year" placeholder="year" name="year" value="{{ data.year }}">
+                <input class="date_field" type="text" id="day" placeholder="day" name="day" value="{{ data.day }}">
+                <input class="date_field" type="text" id="month" placeholder="month" name="month" value="{{ data.month }}">
+            </div>
+        </section>
+
+        <section>
+        <h2>Location</h2>   
+        <div>
+            <input class="name_field" type="text" placeholder="country" id="country" name="country" value="{{ data.UserCountry }}">
+            <input class="name_field" type="text" placeholder="city" id="city" name="city" value="{{ data.UserCity }}">
+        </div>
+        
+        </section>
+
+        <section>
+        <h2>Language</h2>
+        <div>
+            <input class="languages_field" type="text" id="languages" name="languages" value="{{ data.languages }}">
+        </div>
+        
+        </section>
+
+        <button class="pa_s_submit" type="submit">Submit</button>
+    </div>
+
+    <div class="photo-section">
+        <section class="profile-container">
+            <input type="file" name="profilePhoto" accept="image/*" id="profile-upload" class="hidden" onchange="previewFile()">
+            <img class="profile-img" height="200" src="https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png" alt="Profile Photo" id="profile-image" onclick="document.getElementById('profile-upload').click()">
+        </section>
+        <h3>Hi, {{data.firstName}}</h3>
+    </div>
+
+    
+</form>

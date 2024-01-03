@@ -19,10 +19,20 @@ passport.use(new GoogleStrategy({
         return cb(null, existingUser);
       }
 
+      // date without time
+      const today = new Date();
+      const todayWithoutTime = new Date(today.getFullYear(), today.getMonth(), today.getDay());
+
+      const location = "city, country";
+      const language = request.headers['accept-language']||"en-US,en;q=0.5";
+
       // Create a new user
       const newUser = await User.create({
-        googleId: profile.id,
-        username: profile.displayName, // You might want to adjust this based on the available information from Google profile
+        first_name: profile.name.givenName,
+        last_name: profile.name.familyName,
+        birth_date: todayWithoutTime,
+        location: location,
+        language: language,
         email: profile.emails[0].value,
         email_verified : false
       });

@@ -1,28 +1,204 @@
 /* membership.scss */
+$primary-color: #526ec7;
+$secondary-color: #ecf1ff;
+$third-color: #888EBA;
+$corner-radius: 20px;
 
 .membership-container {
     margin-top: 10%;
     display: flex;
+    column-gap: 40px;
 }
 
 .menu-box {
     width: 20%;
-    background-color: #f0f0f0;
+    background-color: white;
     padding: 20px;
+    border-radius: $corner-radius;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .menu-button {
-    display: block;
-    width: 100%; /* Make each button take up the full width of its container */
-    margin-bottom: 10px; /* Add some spacing between buttons */
-  }
+  padding: 10px 20px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: #000;
+  font-family: 'Poppins';
+  flex-grow: 1; /* Each button takes equal space and expands to fill the container */
+  margin: 5px 0; 
+  text-align: left;
+  height: 50px;
   
+}
+
+.menu-button-toggle{
+    background-color: $primary-color;
+    border-radius: $corner-radius;
+}
 
 .content-box {
     flex-grow: 1;
     padding: 20px;
 }
+.common-content-styles {
+    // Your common styles go here
+    width: 90%;
+    background: linear-gradient(to right, $primary-color 50%, #ffffff 50%);
+    border-radius: $corner-radius;
+    padding: 20px;
+  }
 
+.membership-content {
+    @extend .common-content-styles;
+    // Additional styles specific to membership-content if needed
+  }
+  
+  .account-content {
+    @extend .common-content-styles;
+    // Additional styles specific to account-content if needed
+  }
+  
+  .projects-content {
+    @extend .common-content-styles;
+    // Additional styles specific to projects-content if needed
+  }
+  
+  .favorite-content {
+    @extend .common-content-styles;
+    // Additional styles specific to favorite-content if needed
+  }
 
 
 /* Add additional styling as needed */
+
+
+.pa-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4%; // Adjust the gap as needed
+}
+
+.photo-section {
+  grid-column: 2/2; // Place the photo section in the second column
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-section {
+  grid-column: 1/2; // Place the content section in the first column
+}
+
+.name_field{
+  border-radius: $corner-radius;
+  border: none;
+  height: 30px;
+  padding-left: 10px;
+  width: 30%;
+}
+
+.date_field{
+  border-radius: $corner-radius;
+  border: none;
+  height: 30px;
+  padding-left: 10px;
+  width: 18.5%;
+}
+
+.languages_field{
+  border-radius: $corner-radius;
+  border: none;
+  height: 30px;
+  padding-left: 10px;
+  width: 64%;
+}
+
+
+h2{
+  font-family: 'Poppins';
+}
+
+h3{
+  font-family: 'Poppins';
+}
+
+.pa_s_submit{
+  margin-top: 10%;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 1vw;
+  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  color: #000;
+  font-family: 'Poppins';
+
+  &:hover {
+    background-color: $third-color;
+    box-shadow: 0px 15px 20px rgba(82, 110, 199, 0.4);
+  }
+}
+
+.profile-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.pc_container{
+  @extend .pa-container;
+  height: 100%;
+}
+
+.new_project{
+  grid-column: 2/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project_count{
+  grid-column: 1/2;
+}
+
+.b_new_project{
+  margin-top: 10%;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: $primary-color;
+  border-radius: 1vw;
+  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  color: #000;
+  font-family: 'Poppins';
+
+  &:hover {
+    background-color: $third-color;
+    box-shadow: 0px 15px 20px rgba(82, 110, 199, 0.4);
+  }
+}

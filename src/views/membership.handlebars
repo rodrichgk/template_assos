@@ -2,30 +2,23 @@
 
 <div class="membership-container">
     <div class="menu-box">
-        <h2>Menu</h2>
-        <button class="menu-button" data-content-id="membership">Membership</button>
-        <button class="menu-button" data-content-id="account">Personal Account</button>
-        <button class="menu-button" data-content-id="projects">Projects</button>
-        <button class="menu-button" data-content-id="favorite-projects">Favorite Projects</button>
+        <button id="membership" class="menu-button">Membership</button>
+        <button id="account" class="menu-button">Personal Account</button>
+        <button id="projects" class="menu-button">Projects</button>
+        <button id="favorite" class="menu-button">Favorite Projects</button>
     </div>
 
-    <div class="content-box" id="dynamic-content" >
-        {{#switch contentIdentifier }}
-            {{#case "membership"}}
-                {{> membershipContent}}
-            {{/case}}
-            {{#case "account"}}
-                {{> accountContent}}
-            {{/case}}
-            {{#case "projects"}}
-                {{> projectsContent}}
-            {{/case}}
-            {{#case "favorite"}}
-                {{> favoriteprojectsContent}}
-            {{/case}}
-            {{else}}
-                <p>Content not found</p>
-        {{/switch}}
+    <div class="membership-content">
+        {{> membershipContent}}
+    </div>
+    <div class="account-content">
+        {{> accountContent}}
+    </div>
+    <div class="projects-content">
+        {{> projectsContent}}
+    </div>
+    <div class="favorite-content">
+        {{> favoriteprojectsContent}}
     </div>
 </div>
 
