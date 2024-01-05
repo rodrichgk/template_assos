@@ -10,6 +10,8 @@ const userSchema = new mongoose.Schema({
   language: { type: String, unique: false },
   email: { type: String, unique: true },
   email_verified: { type: Boolean, default: false },
+  image_profile: { type: String, unique: false },
+  role: { type: String, unique: false },
 });
 
 module.exports = mongoose.model('User', userSchema);

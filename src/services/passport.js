@@ -25,6 +25,7 @@ passport.use(new GoogleStrategy({
 
       const location = "city, country";
       const language = request.headers['accept-language']||"en-US,en;q=0.5";
+      const image_profile = "https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png";
 
       // Create a new user
       const newUser = await User.create({
@@ -34,7 +35,9 @@ passport.use(new GoogleStrategy({
         location: location,
         language: language,
         email: profile.emails[0].value,
-        email_verified : false
+        email_verified : false,
+        image_profile: image_profile,
+        role : "user",
       });
 
       return cb(null, newUser);

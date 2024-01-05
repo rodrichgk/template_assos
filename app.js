@@ -9,7 +9,16 @@ const path = require('path'); // Import the path module
 
 // Initialize Express app
 const app = express();
-app.use(session({ secret : 'cats' }));
+app.use(
+  session({
+    secret: 'cats',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 20 * 60 * 1000, // Set the session duration to 20 minutes (in milliseconds)
+    },
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
